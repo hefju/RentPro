@@ -2,7 +2,7 @@ package vars
 import (
     "github.com/go-xorm/xorm"
     "github.com/go-xorm/core"
-    "github.com/hefju/RentPro/src/model"
+//    "github.com/hefju/RentPro/src/model"
 _ "github.com/mattn/go-sqlite3"
     "log"
 )
@@ -22,7 +22,7 @@ func init() {
     Db.SetMapper(core.SameMapper{})
     // engine.CreateTables(new(tp_charge_billing))
 
-    err = Db.Sync2(new(model.Tenant), new(model.UtilityBill), new(model.RentDetail)) //, new(Group)) ,new(StockPrice)
+ //   err = Db.Sync2(new(model.Tenant), new(model.UtilityBill), new(model.RentDetail)) //, new(Group)) ,new(StockPrice)
     if err != nil {
         log.Fatalln("xorm sync error", err) //	log.Fatalln("xorm sync error", err)
     }

@@ -8,10 +8,11 @@ import (
     "github.com/hefju/RentPro/src/route"
     "os"
 //    "./src/model"
-   // "github.com/hefju/RentPro/src/vars"
+   "github.com/hefju/RentPro/src/vars"
     "time"
 )
 func main(){
+  new( vars.App).InitApp()
     router := gin.Default()
     router.GET("/home", func(c *gin.Context) {//测试，获取数据表信息
         // log.Println("visit homepage\r\n")
@@ -37,7 +38,8 @@ func main(){
         c.String(http.StatusOK, message)
     })
 
-    router.GET("/tenant/:id",route.Tenant.Get)
+    router.GET("/tenant/:id",new(route.Tenant).Get)
+    router.GET("/tenant",new(route.Tenant).Get)
 
 //    router.GET("/getbill", GetBill)//测试，获取昨天数据表信息
 
@@ -53,6 +55,7 @@ func main(){
         port= os.Args[1]
     }
    // port := os.Args[1]
+    gin.SetMode(gin.DebugMode)
     router.Run(":"+port)
     fmt.Println("end")
 }
