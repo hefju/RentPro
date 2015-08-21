@@ -3,8 +3,23 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>RentPro</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script type="text/javascript">
+function getJSON()
+{
+ $.getJSON("/tenant/1",function(result){
+    $.each(result, function(i, field){
+      $("#content").append(i+" "+field + " <br/>");
+    });
+  });
+}
+    </script>
 </head>
 <body>
     <h3>welcome to RentPro</h3>
+from static/index.html
+    <div id="content"></div>
+<input type="button" onclick="getJSON()" id="button" value="getJSON">
+
 </body>
 </html>
