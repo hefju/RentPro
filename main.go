@@ -4,7 +4,10 @@ import (
     "net/http"
     "log"
     "github.com/gin-gonic/gin"
-    "github.com/hefju/RentPro/src/model"
+    //"github.com/hefju/RentPro/src/model"
+    "github.com/hefju/RentPro/src/route"
+    "os"
+//    "./src/model"
    // "github.com/hefju/RentPro/src/vars"
     "time"
 )
@@ -34,7 +37,7 @@ func main(){
         c.String(http.StatusOK, message)
     })
 
-    router.GET("/tenant/:id",tenantHandler)
+    router.GET("/tenant/:id",route.Tenant.Get)
 
 //    router.GET("/getbill", GetBill)//测试，获取昨天数据表信息
 
@@ -45,15 +48,11 @@ func main(){
 
 //    router.POST("/upload",uploaddata)//批量上传数据
 //    router.POST("/uploadone",uploaddataone)//上传单条数据
-
-    router.Run(":8088")
+    port:="8088"
+    if len(os.Args)>1{
+        port= os.Args[1]
+    }
+   // port := os.Args[1]
+    router.Run(":"+port)
     fmt.Println("end")
-}
-
-func tenantHandler(c *gin.Context){
-   // vars.Db.
-    tenant:=model.Tenant{Id:10,Name:"hefju",Phone:"13929961332",Desc:"测试返回json"}
-    c.JSON(http.StatusOK, tenant)
-   // fmt.Println(t)
-   // model.Tenant
 }
