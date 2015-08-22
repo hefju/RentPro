@@ -1,3 +1,4 @@
+//数据库模块,支持多种数据库
 package vars
 import (
     "github.com/go-xorm/xorm"
@@ -22,7 +23,7 @@ func init() {
     Db.SetMapper(core.SameMapper{})
     // engine.CreateTables(new(tp_charge_billing))
 
- //   err = Db.Sync2(new(model.Tenant), new(model.UtilityBill), new(model.RentDetail)) //, new(Group)) ,new(StockPrice)
+//    err = Db.Sync2(new(model.Tenant), new(model.UtilityBill), new(model.RentDetail)) //, new(Group)) ,new(StockPrice)
     if err != nil {
         log.Fatalln("xorm sync error", err) //	log.Fatalln("xorm sync error", err)
     }

@@ -1,21 +1,18 @@
 package route
-
-import (
-    "github.com/hefju/RentPro/src/model"
-    "github.com/hefju/RentPro/src/vars"
+import(
     "github.com/gin-gonic/gin"
-
-    "net/http"
+    "github.com/hefju/RentPro/src/model"
     "fmt"
-    "log"
     "strconv"
+    "net/http"
+    "github.com/hefju/RentPro/src/vars"
+    "log"
 )
-type Tenant struct {
+type UtilityBill struct {
 
 }
-
-func (page *Tenant)Get(c *gin.Context){
-   tenants:=make([]model.Tenant,0)
+func (page *UtilityBill)Get(c *gin.Context){
+    list:=make([]model.UtilityBill,0)
     idstr:=c.Query("id")
     //id:=c.Param("id")
     fmt.Println("Params:",idstr)
@@ -30,14 +27,11 @@ func (page *Tenant)Get(c *gin.Context){
         where="Id>0"
     }
 
-    err=vars.Db.Where(where).Find(&tenants)
+    err=vars.Db.Where(where).Find(&list)
     if err!=nil{
         log.Println(err)
     }
-    fmt.Println(tenants)
-//  tenant:=model.Tenant{Id:10,Name:"hefju520",Phone:"13929961332",Desc:"测试返回json"}
-    c.JSON(http.StatusOK, tenants)
+    fmt.Println(list)
+    //  tenant:=model.Tenant{Id:10,Name:"hefju520",Phone:"13929961332",Desc:"测试返回json"}
+    c.JSON(http.StatusOK, list)
 }
-
-
-
