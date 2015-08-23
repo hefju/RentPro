@@ -42,6 +42,7 @@ func Run(){
     router.GET("/rentdetail",new(RentDetail).Get)
     router.GET("/utilitybill",new(UtilityBill).Get)
 
+   router.POST("/loginJSON",new(Login).LoginJSON)
     //    router.GET("/getbill", GetBill)//测试，获取昨天数据表信息
 
     //获取服务器时间
