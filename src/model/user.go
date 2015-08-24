@@ -2,9 +2,10 @@ package model
 
 import (
     "fmt"
-//    "github.com/fuxiaohei/purine/src/log"
-//    "github.com/fuxiaohei/purine/src/utils"
-//    "github.com/fuxiaohei/purine/src/vars"
+    //"github.com/hefju/RentPro/src/syslog"
+    "log"
+    "github.com/hefju/RentPro/src/utils"
+    "github.com/hefju/RentPro/src/vars"
     "time"
 )
 
@@ -25,14 +26,14 @@ type User struct {
     Password string
     Salt     string
 
-    Nick       string
+//    Nick       string
 //    Email      string `xorm:"unique"`
 //    Url        string
 //    AvatarUrl  string
 //    Profile    string
     CreateTime int64 `xorm:"created"`
 
-    Role   string `xorm:"index(role)"`
+//    Role   string `xorm:"index(role)"`
     Status string
 }
 
@@ -46,12 +47,12 @@ func GetUserBy(col string, v interface{}) (*User, error) {
     u := new(User)
     if isIdColumn(col) {
         if _, err := vars.Db.Id(v).Get(u); err != nil {
-            log.Error("Db|GetUserBy|%s,%v|%s", col, v, err.Error())
+           log.Println("Db|GetUserBy|%s,%v|%s", col, v, err.Error())
             return nil, err
         }
     } else {
         if _, err := vars.Db.Where(col+" = ?", v).Get(u); err != nil {
-            log.Error("Db|GetUserBy|%s,%v|%s", col, v, err.Error())
+            log.Println("Db|GetUserBy|%s,%v|%s", col, v, err.Error())
             return nil, err
         }
     }
@@ -65,7 +66,7 @@ func GetUserBy(col string, v interface{}) (*User, error) {
 func UpdateUser(u *User) error {
     if _, err := vars.Db.Cols("name,nick,email,url,profile,avatar_url").
     Where("id = ?", u.Id).Update(u); err != nil {
-        log.Error("Db|UpdateUser|%d|%s", u.Id, err.Error())
+        log.Println("Db|UpdateUser|%d|%s", u.Id, err.Error())
         return err
     }
     return nil
@@ -77,7 +78,7 @@ func UpdatePassword(id int64, newPassword string) error {
     u.Salt = utils.Md5String(newPassword)[8:24]
     u.Password = utils.Sha256String(newPassword + u.Salt)
     if _, err := vars.Db.Cols("password,salt").Where("id = ?", id).Update(u); err != nil {
-        log.Error("Db|UpdatePassword|%d|%s", id, err.Error())
+        log.Println("Db|UpdatePassword|%d|%s", id, err.Error())
         return err
     }
     return nil
@@ -100,7 +101,7 @@ func CreateToken(user, expire int64) (*Token, error) {
     }
     t.Token = utils.Md5String(fmt.Sprintf("%d,%d", t.UserId, t.ExpireTime))
     if _, err := vars.Db.Insert(t); err != nil {
-        log.Error("Db|CreateToken|%v|%s", t, err.Error())
+        log.Println("Db|CreateToken|%v|%s", t, err.Error())
         return nil, err
     }
     return t, nil
@@ -111,7 +112,7 @@ func CreateToken(user, expire int64) (*Token, error) {
 func GetValidToken(token string) (*Token, error) {
     t := new(Token)
     if _, err := vars.Db.Where("token = ?", token).Get(t); err != nil {
-        log.Error("Db|GetValidToken|%s|%s", token, err.Error())
+        log.Println("Db|GetValidToken|%s|%s", token, err.Error())
         return nil, err
     }
     // wrong token
