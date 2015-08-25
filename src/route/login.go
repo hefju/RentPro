@@ -2,6 +2,7 @@ package route
 import (
     "github.com/gin-gonic/gin"
     "net/http"
+    "fmt"
 )
 type Login struct {
     User     string `form:"user" json:"user" binding:"required"`
@@ -18,12 +19,18 @@ return str3
 */
 
 func (login *Login)LoginJSON(c *gin.Context){
+    fmt.Println("LoginJSON")
     var json Login
-    if c.BindJSON(&json) == nil {
+    fmt.Println( c.PostForm("user"))
+    if c.Bind(&json) == nil {
+        fmt.Println(json)
         if json.User == "manu" && json.Password == "123" {
             c.JSON(http.StatusOK, gin.H{"status": "you are logged in"})
         } else {
             c.JSON(http.StatusUnauthorized, gin.H{"status": "unauthorized"})
         }
+    }else{
+        fmt.Println("nothing")
     }
+
 }

@@ -3,32 +3,54 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>RentPro</title>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet"/>
+    <link href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
     <script type="text/javascript">
-    $(document).ready(function(){
-   $.getJSON("/tenant?id=0",function(result){
-    $.each(result, function(i, field){
-   $.each(field, function(j, field2){
-      $("#contentAll").append(j+" "+field2 + " ");
+$(document).ready(function(){
+    $.getJSON("/tenant?id=0",function(result){
+        $.each(result, function(i, field){
+            $.each(field, function(j, field2){
+                $("#contentAll").append(j+" "+field2 + " ");
+                });
+            $("#contentAll").append("<br/>");
+        });
     });
-  $("#contentAll").append("<br/>");
+
+    $('#btnLogin').click(function(){
+
+$.post("/loginJSON",
+  {
+   user:"Donald Duck",
+    password:"Duckburg"
+
+  },
+  function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
   });
+
     });
-      });
-function getJSON()
-{
+});
+
+
+
+
+
+function getJSON(){
  $.getJSON("/tenant?id=1",function(result){
     $.each(result, function(i, field){
       $("#content").append(i+" "+field + " <br/>");
     });
   });
 }
+
     </script>
 </head>
 <body>
 <header style="background-color: gray;">这里要引用header</header>
-    <h3>welcome to RentPro</h3>
-from static/index.html
+    <h3>welcome to RentPro</h3>from static/index.html
+<input type="button" id="btnLogin" value="登---录">
 
     <div id="contentAll"><h1>客户信息</h1></div>
 
@@ -36,5 +58,15 @@ from static/index.html
     <div id="content"></div>
 
 <footer style="background-color: gray;">这里要引用footer</footer>
+
+<form id="login-form" action="/loginJSON" method="post" class="form">
+    Username<input id="user" value="hefju" type="text" name="username" required="required"/><br/>
+    Password<input id="password" value="123"  type="password" name="password" required="required"/><br/>
+
+        <input class="chk" type="checkbox" name="remember" id="remember" value="7"/>
+        <span class="chk-txt">Remember</span><br/>
+
+        <button class="btn-primary" type="submit"><i class="fa fa-sign-in"></i>Login</button><br/>
+</form>
 </body>
 </html>

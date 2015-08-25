@@ -100,7 +100,7 @@ func CreateToken(user, expire int64) (*Token, error) {
         ExpireTime: time.Now().Unix() + expire,
     }
     t.Token = utils.Md5String(fmt.Sprintf("%d,%d", t.UserId, t.ExpireTime))
-    if _, err := vars.Db.Insert(t); err != nil {
+        if _, err := vars.Db.Insert(t); err != nil {
         log.Println("Db|CreateToken|%v|%s", t, err.Error())
         return nil, err
     }

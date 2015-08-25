@@ -15,10 +15,11 @@ type Tenant struct {
 }
 
 func (page *Tenant)Get(c *gin.Context){
+    fmt.Println("Tenant.Get")
    tenants:=make([]model.Tenant,0)
     idstr:=c.Query("id")
     //id:=c.Param("id")
-    fmt.Println("Params:",idstr)
+    //fmt.Println("Params:",idstr)
     id,err:=strconv.Atoi(idstr)
     if err!=nil{
         c.JSON(http.StatusBadRequest, gin.H{"status": "Params err"})
@@ -34,7 +35,7 @@ func (page *Tenant)Get(c *gin.Context){
     if err!=nil{
         log.Println(err)
     }
-    fmt.Println(tenants)
+    //fmt.Println(tenants)
 //  tenant:=model.Tenant{Id:10,Name:"hefju520",Phone:"13929961332",Desc:"测试返回json"}
     c.JSON(http.StatusOK, tenants)
 }
