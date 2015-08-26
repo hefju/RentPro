@@ -1,0 +1,41 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;RentPro&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../lib" />
+      <root url="file://$PROJECT_DIR$/../../nfnt" />
+      <root url="file://$PROJECT_DIR$/../jutest" />
+      <root url="file://$PROJECT_DIR$/../mytest" />
+      <root url="file://$PROJECT_DIR$/../mytest2" />
+      <root url="file://$PROJECT_DIR$/../mytest3" />
+      <root url="file://$PROJECT_DIR$/../MyLogTest" />
+      <root url="file://$PROJECT_DIR$/../myservice" />
+      <root url="file://$PROJECT_DIR$/../gochatting-master" />
+      <root url="file://$PROJECT_DIR$/../../lunny" />
+      <root url="file://$PROJECT_DIR$/../../mattn" />
+      <root url="file://$PROJECT_DIR$/../../qiniu" />
+      <root url="file://$PROJECT_DIR$/../../gogits" />
+      <root url="file://$PROJECT_DIR$/../../kobeld" />
+      <root url="file://$PROJECT_DIR$/../../robfig" />
+      <root url="file://$PROJECT_DIR$/../../go-xorm" />
+      <root url="file://$PROJECT_DIR$/../../sunfmin" />
+      <root url="file://$PROJECT_DIR$/../../Unknwon" />
+      <root url="file://$PROJECT_DIR$/../../walking" />
+      <root url="file://$PROJECT_DIR$/../../donnie4w" />
+      <root url="file://$PROJECT_DIR$/../../juju2013" />
+      <root url="file://$PROJECT_DIR$/../../fuxiaohei" />
+      <root url="file://$PROJECT_DIR$/../../gin-gonic" />
+      <root url="file://$PROJECT_DIR$/../../go-martini" />
+      <root url="file://$PROJECT_DIR$/../../johnweldon" />
+      <root url="file://$PROJECT_DIR$/../../codegangsta" />
+      <root url="file://$PROJECT_DIR$/../../paulbellamy" />
+      <root url="file://$PROJECT_DIR$/../../PuerkitoBio" />
+      <root url="file://$PROJECT_DIR$/../../manucorporat" />
+      <root url="file://$PROJECT_DIR$/../../go-sql-driver" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../code.google.com" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
