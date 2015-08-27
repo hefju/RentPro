@@ -4,6 +4,7 @@ import (
 //    "net/http"
 //    "fmt"
     "github.com/lunny/tango"
+  // "fmt"
     "fmt"
 )
 type Login struct {
@@ -15,8 +16,16 @@ func (l *Login) Get() {
   //  l.Render("login.tmpl")
 }
 func (login *Login) Post() {
-   fmt.Println(login.Form("username"))
-    fmt.Println("login post")
+    name := login.Form("username")
+    pwd := login.Form("password")
+    fmt.Println("name:",name,"pwd:",pwd)
+    if name == "hefju" && pwd == "123" {
+//        login.Redirect("index.html")
+        login.Write([]byte("1"))
+    }else{
+    login.Write([]byte("密码不正确"))
+       // login.Redirect("login2.html")
+    }
 }
 
 /* js登录代码

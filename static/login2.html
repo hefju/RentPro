@@ -2,13 +2,39 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="Js/jsLogin.js"></script>
     <title>登录测试</title>
 </head>
 <body>
-<form action="/login" method="post">
-    用户名:<input type="text" name="username">
-    密码:<input type="password" name="password">
-    <input type="submit" value="登陆">
-</form>
+
+<div>
+    用户名:<input type="text" id="txtname"  value="hefju">
+    密码:<input type="password" id="txtpwd" value="28ww">
+    <input type="button" id="btnLogin"  value="登陆">
+</div>
+<span id="divMsg"></span>
+
+  <script type="text/javascript">
+  function login(){
+
+  name=	$("#txtname").attr("value");
+  pwd=$("#txtpwd")[0].value; //$("#password").attr("value");
+  	// console.log($("#username").attr("value"));
+  		console.log(pwd);
+  
+  	$.post("/login",
+  	{
+  		username:name,
+  		password:pwd
+  	},
+  	function(data,status){
+  			<!--console.log(data);-->
+  				<!--console.log(status);//success-->
+  	})
+
+  }
+
+      </script>
 </body>
 </html>
