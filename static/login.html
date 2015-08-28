@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Simpla Admin </title>
+    <meta charset="UTF-8">
+<title>Simpla Admin 登录测试</title>
 <!--                       CSS                       -->
 <!-- Reset Stylesheet -->
 <link rel="stylesheet" href="resources/css/reset.css" type="text/css" media="screen" />
@@ -12,13 +12,14 @@
 <link rel="stylesheet" href="resources/css/invalid.css" type="text/css" media="screen" />
 <!--                       Javascripts                       -->
 <!-- jQuery -->
-<script type="text/javascript" src="resources/scripts/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery-2.1.4.min.js"></script>
 <!-- jQuery Configuration -->
 <script type="text/javascript" src="resources/scripts/simpla.jquery.configuration.js"></script>
 <!-- Facebox jQuery Plugin -->
 <script type="text/javascript" src="resources/scripts/facebox.js"></script>
 <!-- jQuery WYSIWYG Plugin -->
 <script type="text/javascript" src="resources/scripts/jquery.wysiwyg.js"></script>
+  <script type="text/javascript" src="Js/jsLogin.js"></script>
 </head>
 <body id="login">
 <div id="login-wrapper" class="png_bg">
@@ -28,28 +29,34 @@
     <a href="#"><img id="logo" src="resources/images/logo.png" alt="Simpla Admin logo" /></a> </div>
   <!-- End #logn-top -->
   <div id="login-content">
-    <form action="/login" method="post">
-      <div class="notification information png_bg">
-        <div> Just click "Sign In". No password needed. </div>
-      </div>
+   <!--  <form action="" method="get"> -->
+     <div>
+        <div id="dvError"> </div>
+    
       <p>
         <label>Username</label>
-        <input class="text-input" type="text" name="username" />
+        <input class="text-input" type="text" id="txtname" value="hefju" />
       </p>
       <div class="clear"></div>
+
       <p>
         <label>Password</label>
-        <input class="text-input" type="password" name="password" />
+        <input class="text-input" type="password" id="txtpwd" value="12"/>
       </p>
       <div class="clear"></div>
+
       <p id="remember-password">
         <input type="checkbox" />
         Remember me </p>
       <div class="clear"></div>
+
       <p>
-        <input class="button" type="submit" value="Sign In" />
+        <input class="button" id="btnLogin" type="button" value="Sign In" />
+          <input class="button" type="button" id="btnRedirect"  value="重定向">
       </p>
-    </form>
+      
+      </div>
+    <!-- </form> -->
   </div>
   <!-- End #login-content -->
 </div>

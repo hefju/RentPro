@@ -6,6 +6,7 @@ import (
     "github.com/lunny/tango"
   // "fmt"
     "fmt"
+    "github.com/hefju/RentPro/src/model"
 )
 type Login struct {
     tango.Ctx
@@ -16,16 +17,26 @@ func (l *Login) Get() {
   //  l.Render("login.tmpl")
 }
 func (login *Login) Post() {
+//    fmt.Println(login.Params())
+    fmt.Println(   login.Req().FormValue("username"))
+    fmt.Println(   login.Form("username"))
+
     name := login.Form("username")
     pwd := login.Form("password")
     fmt.Println("name:",name,"pwd:",pwd)
+
+   var result  model.Result
     if name == "hefju" && pwd == "123" {
 //        login.Redirect("index.html")
-        login.Write([]byte("1"))
+        result.Ret=1
+        result.Data="index.html"
+        //result.Reason="登录成功."
+        fmt.Println("登录成功.")
     }else{
-    login.Write([]byte("密码不正确"))
-       // login.Redirect("login2.html")
+        result.Ret=0
+        result.Reason="用户名或者密码不正确."
     }
+    login.ServeJson(result)
 }
 
 /* js登录代码

@@ -1,3 +1,4 @@
+
 $(function(){
     $("#divMsg").ajaxStart(function(){
     $(this).show().html("sent request");
@@ -7,26 +8,31 @@ $(function(){
     $(this).show().html("received request");
     })
     $("#btnLogin").click(function(){
-        var $name=$("#txtName");
-        var $pass=$("#txtPwd");
+        var $name=$("#txtname");
+        var $pass=$("#txtpwd");
         UserLogin($name.val(),$pass.val());
     })
+
+ $("#btnRedirect").click(function(){
+        window.location="index.html";
+    })
+
 });
 
 function UserLogin(name,pass){
-console.log("method:   UserLogin ");
+ $("#dvError").html("");
     $.ajax({
-        type:"Post",
-        url:"/login",
-        data:{username:name,password:pass},
-        success:function(data){
-            if(data=="1"){
-            window.location="index.html"
-            }else{
-                console.log("password error.")
-            //alert("password error.")
-            return false;
-            }
-        }
-    });
-}
+         type:"Post",
+         url:"/login",
+         data:{username:name,password:pass},
+         success:function(data){
+             if(data.Ret===1){
+                    //  $("#dvError").html("登录成功:"+data.Reason);
+              window.location.assign(data.Data);
+             }else{
+                 $("#dvError").html("登录失败:"+data.Reason);
+                return false;
+             }
+         }
+     });
+ }
