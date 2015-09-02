@@ -9,12 +9,22 @@ $(document).ready(function(){
 			function () {
 				$(this).parent().siblings().find("ul").slideUp("normal"); // Slide up all sub menus except the one clicked
 				$(this).next().slideToggle("normal"); // Slide down the clicked sub menu
+			
 				return false;
 			}
 		);
+		// Content tabs Add:
+		/*$("a.nav-top-item").parent().find("ul").find("a").click(	
+			function () {
+				$('.content-box ul.content-box-tabs')
+				.append('<li><a href="#tab2">Table3<img src="resources/images/co.png" height="15px" wide="15px"></img></a></li>');       
+		    return false;
+			}
+		);*/
 		
 		$("#main-nav li a.no-submenu").click( // When a menu item with no sub menu is clicked...
 			function () {
+
 				window.location.href=(this.href); // Just open the link instead of a sub menu
 				return false;
 			}
@@ -45,22 +55,44 @@ $(document).ready(function(){
 			}
 		);
 
-    // Content box tabs:
+       // Content box tabs:
 		
 		$('.content-box .content-box-content div.tab-content').hide(); // Hide the content divs
 		$('ul.content-box-tabs li a.default-tab').addClass('current'); // Add the class "current" to the default tab
 		$('.content-box-content div.default-tab').show(); // Show the div with class "default-tab"
-		
-		$('.content-box ul.content-box-tabs li a').click( // When a tab is clicked...
+		/*$('.content-box ul.content-box-tabs').on("click","li a", // When a tab is clicked...
 			function() { 
 				$(this).parent().siblings().find("a").removeClass('current'); // Remove "current" class from all tabs
+				// $(this).parent().siblings().find("a").find("img").attr('style','display:none')); // img class display is none
+				$(this).addClass('current'); // Add class "current" to clicked tab
+				var currentTab = $(this).attr('href'); // Set variable "currentTab" to the value of href of clicked tab
+				$(currentTab).siblings().hide(); // Hide all content divs
+				$(currentTab).show(); // Show the content div with the id equal to the id of clicked tab
+				return false; 
+
+			}
+		);
+				$('.content-box ul.content-box-tabs li a').on("click", // When a tab is clicked...
+			function() { 
+				$(this).parent().siblings().find("a").removeClass('current'); // Remove "current" class from all tabs
+				// $(this).parent().siblings().find("a").find("img").attr('style','display:none')); // img class display is none
 				$(this).addClass('current'); // Add class "current" to clicked tab
 				var currentTab = $(this).attr('href'); // Set variable "currentTab" to the value of href of clicked tab
 				$(currentTab).siblings().hide(); // Hide all content divs
 				$(currentTab).show(); // Show the content div with the id equal to the id of clicked tab
 				return false; 
 			}
-		);
+		);*/
+	   // Content box tabs Close:
+		/*$('.content-box-tabs img').live("click",
+		   function()
+		   {
+			   var IfOne=$(this).parent().parent();
+			   $(this).parent().parent().remove();
+		   }
+		)*/
+		// Content box tabs Add:
+
 
     //Close button:
 		
@@ -93,7 +125,8 @@ $(document).ready(function(){
 		
 		$(".wysiwyg").wysiwyg(); // Applies WYSIWYG editor to any textarea with the class "wysiwyg"
 
+
+
 });
-  
   
   
