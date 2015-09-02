@@ -7,7 +7,7 @@
 				);
 				$('.content-box ul.content-box-tabs li a').on("click", // When a tab is clicked...
 				function(event) { 
-					contentboxCilck(this);		
+					contentboxCilck(this);
 				}
 				);
 			    //RemoveTable
@@ -19,7 +19,7 @@
                     //document.getElementById("#Tabletree2").click();
  
 				}
-
+//
 				// LeftClick wrapper Arrow
 				$("#sidebar-wrapper  li ul a").click(
 				function()
