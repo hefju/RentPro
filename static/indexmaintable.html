@@ -1,6 +1,6 @@
-﻿<html>
+﻿﻿<html>
 <head>
-〈meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Simpla Admin</title>
 <!--                       CSS                       -->
 <link rel="stylesheet" href="resources/css/reset.css" type="text/css" media="screen" />
@@ -40,50 +40,40 @@
           <!-- Add the class "current" to current menu item -->
           人&nbsp&nbsp&nbsp&nbsp&nbsp事 </a>
           <ul>
-            <li><a href="#" hrefName="tab1">员工档案</a></li>
-            <li><a class="current" href="#" hrefName="tab2">考勤管理</a></li>
+            <li><a href="#" hrefName="tab1" iframeName="RS/employee">人事管理</a></li>
+            <li><a href="#" hrefName="tab2" iframeName="table">考勤管理</a></li>
             <!-- Add class "current" to sub menu items also -->
-            <li><a href="#" hrefName="tab11">法定加班日设置</a></li>
-              <li><a href="#" hrefName="tab12">社保公积金</a></li>
-              <li><a href="#" hrefName="tab13">工资</a></li>
-              <li><a href="#" hrefName="tab14">综合查询</a></li>
-              <li><a href="#" hrefName="tab15">人事月报表</a></li>
+            <li><a href="#" hrefName="tab3" iframeName="#">离职设置</a></li>
+            <li><a href="#" hrefName="tab4" iframeName="#">法定加班日设置</a></li>
           </ul>
-        </li>
-        <li> <a href="#" class="nav-top-item"> 系统参数设置 </a>
-        <ul>
-          <li><a href="#" hrefName="tab21">公司架构</a></li>
-            <li><a href="#" hrefName="tab22">离职设置</a></li>
-          <li><a href="#" hrefName="tab23">Manage Pages</a></li>
-        </ul>
         </li>
         <li> <a href="#" class="nav-top-item"> Pages </a>
           <ul>
-            <li><a href="#" hrefName="tab31">Create a new Page</a></li>
-            <li><a href="#" hrefName="tab32">Manage Pages</a></li>
+            <li><a href="#" hrefName="tab5" iframeName="#">Create a new Page</a></li>
+            <li><a href="#" hrefName="tab6" iframeName="#">Manage Pages</a></li>
           </ul>
         </li>
         <li> <a href="#" class="nav-top-item"> Image Gallery </a>
           <ul>
-            <li><a href="#" hrefName="tab41">Upload Images</a></li>
-            <li><a href="#" hrefName="tab42">Manage Galleries</a></li>
-            <li><a href="#" hrefName="tab43">Manage Albums</a></li>
-            <li><a href="#" hrefName="tab44">Gallery Settings</a></li>
+            <li><a href="#" hrefName="tab5" iframeName="#">Upload Images</a></li>
+            <li><a href="#" hrefName="tab6" iframeName="#">Manage Galleries</a></li>
+            <li><a href="#" hrefName="tab7" iframeName="#">Manage Albums</a></li>
+            <li><a href="#" hrefName="tab8" iframeName="#">Gallery Settings</a></li>
           </ul>
         </li>
         <li> <a href="#" class="nav-top-item"> Events Calendar </a>
           <ul>
-            <li><a href="#" hrefName="tab9">Calendar Overview</a></li>
-            <li><a href="#" hrefName="tab10">Add a new Event</a></li>
-            <li><a href="#" hrefName="tab11">Calendar Settings</a></li>
+            <li><a href="#" hrefName="tab9" iframeName="#">Calendar Overview</a></li>
+            <li><a href="#" hrefName="tab10" iframeName="#">Add a new Event</a></li>
+            <li><a href="#" hrefName="tab11" iframeName="#">Calendar Settings</a></li>
           </ul>
         </li>
         <li> <a href="#" class="nav-top-item"> Settings </a>
           <ul>
-            <li><a href="#" hrefName="tab12">General</a></li>
-            <li><a href="#" hrefName="tab13">Design</a></li>
-            <li><a href="#" hrefName="tab14">Your Profile</a></li>
-            <li><a href="#" hrefName="tab15">Users and Permissions</a></li>
+            <li><a href="#" hrefName="tab12" iframeName="#">General</a></li>
+            <li><a href="#" hrefName="tab13" iframeName="#">Design</a></li>
+            <li><a href="#" hrefName="tab14" iframeName="#">Your Profile</a></li>
+            <li><a href="#" hrefName="tab15" iframeName="#">Users and Permissions</a></li>
           </ul>
         </li>
       </ul>
@@ -126,36 +116,32 @@
     </div>
     </noscript>
     <!-- Page Head -->
-    <h2>Welcome</h2>
-    <p id="page-intro">What would you like to do?</p>
+    <h2>欢迎使用</h2>
     
-    <!-- End .shortcut-buttons-set -->
-    <div class="clear"></div>
-    <!-- End .clear -->
-    <div class="content-box">
-      <!-- Start Content Box -->
+    
+
+   <!-- <div class="content-box">
+
       <div class="content-box-header">
         <h3>Content box</h3>
         <ul class="content-box-tabs">
           <li><a id="Tabletree1" href="#tab1" class="default-tab">Table<img src="resources/images/co.png"  height="15px" wide="15px"></img></a></li>
-          <!-- href must be unique and match the id of target div -->
+
           <li><a id="Tabletree2" href="#tab2">Forms<img src="resources/images/co.png" height="15px" wide="15px"></img></a></li>
         </ul>
-        <div class="clear"></div>
+
       </div>
-      <!-- End .content-box-header -->
+
       <div class="content-box-content">
-          <!-- This is the target div. id must match the href of this div's tab -->
+
           <div  class="tab-content default-tab" id="tab1" style="height:100%;  width:100%;"> 
           <iframe src="table.html" width="100%" height="100%" scrolling="no"  frameBorder='0'></iframe>
         </div>
-        <!-- End #tab1 -->
+
           <div class="tab-content" id="tab2">
-<!-- <img>  </img> -->
           123
           </div>
-        <!-- End #tab2 -->
-      </div>
+      </div>-->
       <!-- End .content-box-content -->
     </div>
   </div>
