@@ -1,0 +1,8 @@
+/.idea
+/LocalConfig.go
+/LocalConfig2.go
+/*.log
+/*.exe
+/*.db
+/*.bat
+/static/resources/images
