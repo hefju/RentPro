@@ -24,7 +24,7 @@
 				$("#sidebar-wrapper  li ul a").click(
 				function()
 				{
-					$('#sidebar-wrapper .current').removeClass('current');
+					//$('#sidebar-wrapper .current').removeClass('current');
 					$(this).addClass('current');
 					$(this).parent().parent().prev().removeClass().addClass('nav-top-item current')
 				})
@@ -36,9 +36,10 @@
 					$(this).removeClass().addClass('nav-top-item current');
 				})
 				
-				function Cloasimg(Value)
+				
+				function Closeimg(Value)
 				{
-					var ClassName=$(Value).parent().attr('href');
+					var ClassName=$(Value).parent().attr('hrefjump');
 					//Next Change Select Table1
 					var Value = $(Value).parent().parent().next('li').find('a');
 					//RemoveTableChange
@@ -55,6 +56,7 @@
 						RemoveClass1(ClassName,Value);
 						//Value.addClass('current');
 					}
+					event.stopPropagation();    //冒泡阻止  event.cancelBubble=true;
 				}
 				
 
@@ -77,8 +79,10 @@
 					else
 					{
 						$('.content-box ul.content-box-tabs')
-						.append('<li><a href ="#L'+tablename+'" id="'+tablename+'">'+tablename+'<img src="resources/images/co.png" height="15px" wide="15px"></img></a></li>');       
-						$('.content-box-content').append(' <div class="tab-content" id="L'+tablename+'"><iframe src="'+iframename+'.html" width="100%" height="100%" scrolling="no"  frameBorder="0"></iframe></div>');
+						.append('<li><a href="#" hrefjump ="#L'+tablename+'" id="'+tablename+'">'+tablename+'<img src="resources/images/co.png" height="15px" wide="15px"></img></a></li>');       
+						$('.content-box-content').append(' <div id="L'+tablename+'"><iframe src="'+iframename+'.html" width="100%" height="100%" scrolling="no"  frameBorder="0"></iframe></div>');
+						$('#L'+tablename).addClass("tab-content");
+						$('#'+tablename).addClass('content-header');
 						$('#'+tablename+'').trigger("click");
 					}
 				});
@@ -86,10 +90,11 @@
 				function contentboxCilck(Value)
 				{				
 			        // change select left 
-					var SUB=$(Value).attr('href');
+					var SUB=$(Value).attr('hrefjump');
 					var Subb=SUB.substring(2,SUB.length);
 					//var Sm= $('#main-nav li ul a').find(Subb);
 					var SS=$('*[hrefname="'+Subb+'"]');
+					//判断左边导航是否选中
 					if(SS.length!=0)
 					{
 						$('#sidebar-wrapper .current').removeClass('current');
@@ -99,7 +104,7 @@
 					$(Value).parent().siblings().find("a").removeClass('current'); // Remove "current" class from all tabs
 					// $(this).parent().siblings().find("a").find("img").attr('style','display:none')); // img class display is none
 					$(Value).addClass('current'); // Add class "current" to clicked tab
-					var currentTab = $(Value).attr('href'); // Set variable "currentTab" to the value of href of clicked tab
+					var currentTab = $(Value).attr('hrefjump'); // Set variable "currentTab" to the value of href of clicked tab
 					$('.tab-content').siblings().hide(); // Hide all content divs
 					$(currentTab).show(); // Show the content div with the id equal to the id of clicked tab
 				}
@@ -107,15 +112,16 @@
 				function AddCloseimg(value)
 				{
 					//RemoveTable
-					var ClassName=$(value).parent().attr('href');
+					var ClassName=$(value).parent().attr('hrefjump');
 					//Next Change Select Table1
 					var Value= $(value).parent().parent().next('li').find('a');
-					//RemoveTableChange
+					//RemoveTableChange 删除tab和table
 					$(value).parent().parent().remove();
-					//Next Change Select Table2
+					$(ClassName).remove();
+					//Next Change Select Table2 下个选中
 					var ChangeTableCurrent=$('.content-box-tabs').find("a").attr("class");
 					//var ChangeTableCurrent=$(".content-box-tabs li a class:contains('current')")				
-					if (ChangeTableCurrent==undefined?false:ChangeTableCurrent!="default-tab"?true:false)
+					if (ChangeTableCurrent==undefined?false:ChangeTableCurrent=="default-tab"?false:ChangeTableCurrent=="content-header"?false:true)
 					{
 						return;
 					}
@@ -154,7 +160,8 @@
 						 $('.content-box ul.content-box-tabs img').on('click',
 						function(event)
 						{
-							this(AddCloseimg);
+							AddCloseimg(this);
+							event.stopPropagation();  
 						}
 						);
 						
@@ -164,6 +171,7 @@
 						function(event)
 						{
 							AddCloseimg(this);
+							event.stopPropagation();  
 						})
                     }
 				}
