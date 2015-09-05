@@ -10,12 +10,13 @@ html {
 body {
                 font-family: Arial, Helvetica, sans-serif;
                 color: #555;
-                background: #f0f0f0 url('../images/bg-body.gif') top left repeat-y;
+                background: #f0f0f0  top left repeat-y;
                 font-size: 12px;
                 }
 
 #body-wrapper {
-                background: url('../images/bg-radial-gradient.gif') fixed 230px top no-repeat;
+                //background:  fixed 230px top repeat 
+
                 }                
 
 /********************************      Elements styling      ********************************/
@@ -98,18 +99,24 @@ a.remove-link:hover {
 /********************************      Sidebar      ********************************/
 
 #sidebar {
-                background: url('../images/bg-sidebar.gif') top left no-repeat;
-                width: 230px;
-                height: 100%;
-                position: absolute;
+                //background: #123456   left no-repeat;
+                width: auto;
+                height: auto;
+                //position: absolute;
+                float:left;
                 left: 0;
-                top: 0;
+                top: 120px;
                 color: #888;
                 font-size: 11px;
+                //margin-left:-225px;  //最左
+                //margin-left:300px;
                 }
 
 #sidebar #sidebar-wrapper {
-                margin: 0 0 0 9px;
+                background: #123456  left no-repeat;
+                float:left;
+                margin: 0 0 0 0px;
+
                 }
 
 #sidebar a,
@@ -227,7 +234,7 @@ a.remove-link:hover {
 
 #main-content {
                 margin: 0 30px 0 260px;
-                padding: 40px 0 0 0;
+                padding: 20px 0 0 0;
                 }
 
 .column-left {
@@ -280,9 +287,12 @@ a.remove-link:hover {
 /*************** Content Box ***************/
 
 .content-box {
+                //float:left;
                 border: 1px solid #ccc;
                 margin: 0 0 20px 0;
                 background: #fff;
+                width: auto;
+                height: auto;
                 }
 
 .content-box-header {
@@ -789,3 +799,44 @@ div.wysiwyg ul.panel li a.removeFormat { background-position: -80px -64px; }
 div.wysiwyg ul.panel li a.empty { background-position: -64px -80px; }
 
 div.wysiwyg iframe { border: 0; margin: 5px 0 0 0; clear: left; width: 97.5% !important; }
+
+
+#topmain
+{
+        //background: url('../images/bg-radial-gradient.gif') fixed 230px top repeat  ;
+        //background: #0000AA;
+        //background-repeat:  repeat-x 0 0 ;
+         background-image: -moz-linear-gradient(left, #ffffff, #0000AA); /* Firefox */
+         background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #ffffff ), color-stop(12, #0000AA)); /* Saf4+, Chrome */
+         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#123456', endColorstr='#0000AA', GradientType='0'); /* IE*/
+         float:top;
+         position：absolute;
+         top:0px;
+         height: 90px;
+         width: 100%;
+         box-shadow:0 0 40px #0000AA;  
+}
+
+#Clickcss1
+{      
+        text-align: center;
+       // position：absolute;
+        //position: relative; margin: 0 auto;
+        //background:#f0f0f0;
+       // height: auto;
+        float:right;
+         //margin-left:-200px; 
+            margin-top: 150%;
+        //opacity: 1;
+        //height: 100%;
+        // marigin:-155px auto;
+}
+#Clickcss
+{
+     background:#123456;
+}
+#Clickcss h5
+{
+    color: #FFFFFF;
+
+}

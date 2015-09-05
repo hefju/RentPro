@@ -1,5 +1,28 @@
 			$(function addclassstyle()
 			{
+				/*$('.content-box-content').width().Change(function(event)
+				{
+					var jsss=event;
+				})*/
+				$('#Clickcss').on("click",function(event)
+				{
+					var  marginleft=$('#sidebar').css('margin-left');
+					if(marginleft=="-225px")
+						{
+							//$('*[name="tabtable"]').css("width","100%");
+							$("#sidebar").css({"margin-left":"0px","transition":"3s margin"});
+							$('#joacims-menu').html("<</br><");
+							$(".content-box").css({"margin-left":"-0px","transition":"3s margin"});
+						}
+					else
+					{
+						//$('*[name="tabtable"]').css("width","100%");
+						$("#sidebar").css({"margin-left":"-225px","transition":"3s margin"});
+						$('#joacims-menu').html("></br>>");
+						$(".content-box").css({"margin-left":"-225px","transition":"3s margin"});
+					}
+				});
+
 				$('.content-box ul.content-box-tabs').on("click","li a", // When a tab is clicked...
 				function(event) { 
 					contentboxCilck(this);
@@ -80,7 +103,7 @@
 					{
 						$('.content-box ul.content-box-tabs')
 						.append('<li><a href="#" hrefjump ="#L'+tablename+'" id="'+tablename+'">'+tablename+'<img src="resources/images/co.png" height="15px" wide="15px"></img></a></li>');       
-						$('.content-box-content').append(' <div id="L'+tablename+'"><iframe src="'+iframename+'.html" width="100%" height="100%" scrolling="no"  frameBorder="0"></iframe></div>');
+						$('.content-box-content').append(' <div name="tabtable"  id="L'+tablename+'"><iframe src="'+iframename+'.html" width="100%" height="100%" scrolling="auto"  frameBorder="0"></iframe></div>');
 						$('#L'+tablename).addClass("tab-content");
 						$('#'+tablename).addClass('content-header');
 						$('#'+tablename+'').trigger("click");
@@ -136,6 +159,7 @@
 					}
 					event.stopPropagation();    //冒泡阻止  event.cancelBubble=true;
 				}
+
 				function AddContent()
 				{
                     if($('.content-box').length==0)

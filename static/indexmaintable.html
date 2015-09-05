@@ -1,4 +1,5 @@
-﻿﻿<html>
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Simpla Admin</title>
@@ -19,8 +20,20 @@
 <script type="text/javascript" src="resources/scripts/jquery.date.js"></script>
 <script type="text/javascript" src="resources/scripts/clickclass.js"></script>
 </head>
+<!--
+<style type="text/css">
+.joacims-menu ~ .sidebar {
+  margin-left:-225px;
+  transition:.6s margin;
+}
+.joacims-menu:checked ~ .sidebar {
+  margin-left:0px;
+}
+</style>-->
 <body>
 <div id="body-wrapper">
+  <div id="topmain">
+  </div>
   <div id="sidebar">
     <div id="sidebar-wrapper">
       <!-- Sidebar with logo and menu -->
@@ -40,8 +53,8 @@
               <!-- Add the class "current" to current menu item -->
               人&nbsp&nbsp&nbsp&nbsp&nbsp事 </a>
               <ul>
-                  <li><a href="#" hrefName="tab1">员工档案</a></li>
-                  <li><a class="current" href="#" hrefName="tab2">考勤管理</a></li>
+                  <li><a href="#" hrefName="tab1" iframeName="table">员工档案</a></li>
+                  <li><a class="current" href="#" hrefName="tab">考勤管理</a></li>
                   <!-- Add class "current" to sub menu items also -->
                   <li><a href="#" hrefName="tab11">法定加班日设置</a></li>
                   <li><a href="#" hrefName="tab12">社保公积金</a></li>
@@ -114,7 +127,18 @@
         </form>
       </div>
     </div>
+    <div id="Clickcss1">
+   <div id="Clickcss"> 
+    <!--<input type="checkbox" id="joacims-menu" checked/>-->
+    <h5 id="joacims-menu"><</br><</h5>
+</div></div>
   </div>
+      <!--<div>
+      <input type="checkbox" id="joacims-menu" checked>
+      <label for="joacims-menu">
+        <span>+</span>
+      </label>
+    </div>-->
         <!-- End #messages -->
  <div id="main-content">
     <!-- Main Content Section with everything -->
@@ -126,7 +150,7 @@
     </div>
     </noscript>
     <!-- Page Head -->
-    <h2>欢迎使用</h2>
+    
     
     
 
