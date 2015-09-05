@@ -1,4 +1,5 @@
-﻿﻿<html>
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Simpla Admin</title>
@@ -14,13 +15,25 @@
 <script type="text/javascript" src="resources/scripts/facebox.js"></script>
 <!-- jQuery WYSIWYG Plugin -->
 <script type="text/javascript" src="resources/scripts/jquery.wysiwyg.js"></script>
-<!-- jQuery Datepicker Plugin1 -->
+<!-- jQuery Datepicker Plugin -->
 <script type="text/javascript" src="resources/scripts/jquery.datePicker.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.date.js"></script>
 <script type="text/javascript" src="resources/scripts/clickclass.js"></script>
 </head>
+<!--
+<style type="text/css">
+.joacims-menu ~ .sidebar {
+  margin-left:-225px;
+  transition:.6s margin;
+}
+.joacims-menu:checked ~ .sidebar {
+  margin-left:0px;
+}
+</style>-->
 <body>
 <div id="body-wrapper">
+  <div id="topmain">
+  </div>
   <div id="sidebar">
     <div id="sidebar-wrapper">
       <!-- Sidebar with logo and menu -->
@@ -33,20 +46,30 @@
         <a href="#" title="View the Site">View the Site</a> | <a href="#" title="Sign Out">Sign Out</a> </div>
       <ul id="main-nav">
         <!-- Accordion Menu -->
-        <li> <a href="#/" class="nav-top-item no-submenu">
-          <!-- Add the class "no-submenu" to menu items with no sub menu -->
-          主&nbsp&nbsp&nbsp&nbsp&nbsp页 </a> </li>
-        <li> <a href="#" class="nav-top-item current">
-          <!-- Add the class "current" to current menu item -->
-          人&nbsp&nbsp&nbsp&nbsp&nbsp事 </a>
-          <ul>
-            <li><a href="#" hrefName="tab1" iframeName="RS/employee">人事管理</a></li>
-            <li><a href="#" hrefName="tab2" iframeName="table">考勤管理</a></li>
-            <!-- Add class "current" to sub menu items also -->
-            <li><a href="#" hrefName="tab3" iframeName="#">离职设置</a></li>
-            <li><a href="#" hrefName="tab4" iframeName="#">法定加班日设置</a></li>
-          </ul>
-        </li>
+          <li> <a href="#/" class="nav-top-item no-submenu">
+              <!-- Add the class "no-submenu" to menu items with no sub menu -->
+              主&nbsp&nbsp&nbsp&nbsp&nbsp页 </a> </li>
+          <li> <a href="#" class="nav-top-item current">
+              <!-- Add the class "current" to current menu item -->
+              人&nbsp&nbsp&nbsp&nbsp&nbsp事 </a>
+              <ul>
+                  <li><a href="#" hrefName="tab1" iframeName="table">员工档案</a></li>
+                  <li><a class="current" href="#" hrefName="tab">考勤管理</a></li>
+                  <!-- Add class "current" to sub menu items also -->
+                  <li><a href="#" hrefName="tab11">法定加班日设置</a></li>
+                  <li><a href="#" hrefName="tab12">社保公积金</a></li>
+                  <li><a href="#" hrefName="tab13">工资</a></li>
+                  <li><a href="#" hrefName="tab14">综合查询</a></li>
+                  <li><a href="#" hrefName="tab15">人事月报表</a></li>
+              </ul>
+          </li>
+          <li> <a href="#" class="nav-top-item"> 系统参数设置 </a>
+              <ul>
+                  <li><a href="#" hrefName="tab21">公司架构</a></li>
+                  <li><a href="#" hrefName="tab22">离职设置</a></li>
+                  <li><a href="#" hrefName="tab23">Manage Pages</a></li>
+              </ul>
+          </li>
         <li> <a href="#" class="nav-top-item"> Pages </a>
           <ul>
             <li><a href="#" hrefName="tab5" iframeName="#">Create a new Page</a></li>
@@ -104,7 +127,18 @@
         </form>
       </div>
     </div>
+    <div id="Clickcss1">
+   <div id="Clickcss"> 
+    <!--<input type="checkbox" id="joacims-menu" checked/>-->
+    <h5 id="joacims-menu"><</br><</h5>
+</div></div>
   </div>
+      <!--<div>
+      <input type="checkbox" id="joacims-menu" checked>
+      <label for="joacims-menu">
+        <span>+</span>
+      </label>
+    </div>-->
         <!-- End #messages -->
  <div id="main-content">
     <!-- Main Content Section with everything -->
@@ -116,7 +150,7 @@
     </div>
     </noscript>
     <!-- Page Head -->
-    <h2>欢迎使用</h2>
+    
     
     
 
