@@ -10,13 +10,12 @@ html {
 body {
                 font-family: Arial, Helvetica, sans-serif;
                 color: #555;
-                background: #f0f0f0  top left repeat-y;
+                background: #f0f0f0 ;
                 font-size: 12px;
                 }
 
 #body-wrapper {
-                //background:  fixed 230px top repeat 
-
+                background: url('../images/bg-radial-gradient.gif') fixed 230px top no-repeat;
                 }                
 
 /********************************      Elements styling      ********************************/
@@ -99,24 +98,26 @@ a.remove-link:hover {
 /********************************      Sidebar      ********************************/
 
 #sidebar {
-                //background: #123456   left no-repeat;
+                //background: url('../images/bg-body.gif') top left repeat-y;
                 width: auto;
-                height: auto;
-                //position: absolute;
-                float:left;
+                //height: offsetHeight;
+                position: absolute;
                 left: 0;
-                top: 120px;
+                top: 0;
                 color: #888;
                 font-size: 11px;
-                //margin-left:-225px;  //最左
-                //margin-left:300px;
+				
+				float:left;
+				//overflow:hidden;
                 }
 
 #sidebar #sidebar-wrapper {
-                background: #123456  left no-repeat;
-                float:left;
+				
+				background: url('../images/bg-body.gif') top left repeat-y;
+			    float:left;
+				height:100%;
+				
                 margin: 0 0 0 0px;
-
                 }
 
 #sidebar a,
@@ -149,6 +150,7 @@ a.remove-link:hover {
                 padding: 0;
                 margin: 0 0 0 15px;
                 font-family: Helvetica, Arial, sans-serif;
+				height:auto;
                 }
 
 #sidebar #main-nav li {
@@ -234,7 +236,7 @@ a.remove-link:hover {
 
 #main-content {
                 margin: 0 30px 0 260px;
-                padding: 20px 0 0 0;
+                padding: 40px 0 0 0;
                 }
 
 .column-left {
@@ -287,12 +289,9 @@ a.remove-link:hover {
 /*************** Content Box ***************/
 
 .content-box {
-                //float:left;
                 border: 1px solid #ccc;
                 margin: 0 0 20px 0;
                 background: #fff;
-                width: auto;
-                height: auto;
                 }
 
 .content-box-header {
@@ -339,8 +338,8 @@ ul.content-box-tabs li a.current {
                 }
 
 .content-box-content {
-                padding: 1px;
-                font-size: 1px;
+                padding: 0px;
+                font-size: 13px;
                 border-top: 1px solid #ccc;
                 }
                 
@@ -826,14 +825,14 @@ div.wysiwyg iframe { border: 0; margin: 5px 0 0 0; clear: left; width: 97.5% !im
        // height: auto;
         float:right;
          //margin-left:-200px; 
-            margin-top: 150%;
+            margin-top: 200%;
         //opacity: 1;
         //height: 100%;
         // marigin:-155px auto;
 }
 #Clickcss
 {
-     background:#123456;
+     		background: url('../images/bg-sidebar.gif') top left no-repeat;
 }
 #Clickcss h5
 {
